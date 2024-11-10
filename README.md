@@ -1,5 +1,5 @@
 # new_ws
-**BASHRC LINES**
+**BASHRC LINES:**
 
 gedit ~/.bashrc
 
@@ -16,7 +16,7 @@ source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
 
 
-**INSTALLATION COMMANDS**
+**INSTALLATION COMMANDS:**
 
 sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
@@ -62,14 +62,15 @@ sudo snap install code --classic
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 sudo apt install ros-humble-slam-toolbox
 
-**Lab5 manipulator gazebo fk**
+**Lab5 manipulator gazebo fk:**
 
 ros2 run urdf_tutorial control --ros-args -p joint_angles:=[0.5,0.7,-0.3]
 
-**SLAM YAML CHANGES**
+**SLAM YAML CHANGES:**
 
 robot_model_type: "nav2_amcl::DifferentialMotionModel"
 
-**CLONE TB3**
+**CLONE TB3:**
+
 git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git 
 
