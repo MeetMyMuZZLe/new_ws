@@ -61,7 +61,7 @@ sudo snap install code --classic
 
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 sudo apt install ros-humble-slam-toolbox
-
+pip install transforms3d
 **Lab5 manipulator gazebo fk:**
 
 ros2 run urdf_tutorial control --ros-args -p joint_angles:=[0.5,0.7,-0.3]
