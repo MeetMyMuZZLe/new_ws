@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/meet/ros2_ws/install/project/lib/python3.10/site-packages",
+        "/home/meet/robot_ws/install/gazebo_map_creator_interface/local/lib/python3.10/dist-packages",
+        "/home/meet/project_ws/install/zm_robot_teleop/lib/python3.10/site-packages",
+        "/home/meet/project_ws/install/zm_robot_programing/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/meet/ros2_ws/install/project/lib/python3.10/site-packages",
+        "/home/meet/robot_ws/install/gazebo_map_creator_interface/local/lib/python3.10/dist-packages",
+        "/home/meet/project_ws/install/zm_robot_teleop/lib/python3.10/site-packages",
+        "/home/meet/project_ws/install/zm_robot_programing/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

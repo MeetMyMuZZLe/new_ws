@@ -1,0 +1,68 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+joint_state_broadcaster:
+  ros__parameters:
+    extra_joints:
+      - spoiler_joint
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["rear_axle_joint"]
+    right_wheel_names: ["rear_axle_joint"]
+
+    wheel_separation: 0.577
+    wheel_radius: 0.085
+
+    use_stamped_vel: false
+
+    # Wheel separation and radius multipliers
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    # Velocity and acceleration limits
+    linear:
+      x:
+        has_velocity_limits: true
+        max_velocity: 2.0
+        min_velocity: -2.0
+        has_acceleration_limits: true
+        max_acceleration: 2.0
+        min_acceleration: -2.0
+    angular:
+      z:
+        has_velocity_limits: true
+        max_velocity: 4.0  # Increased from 2.0
+        min_velocity: -4.0  # Increased from -2.0
+        has_acceleration_limits: true
+        max_acceleration: 4.0  # Increased from 1.0
+        min_acceleration: -4.0  # Increased from -1.0
+
+    # Other parameters
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: chasis
+    pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 0.03]
+    twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 0.03]
+
+    enable_odom_tf: true
+
+    cmd_vel_timeout: 0.5
+    publish_limited_velocity: true
+    use_stamped_vel: false
+    
+    # Velocity multipliers
+    linear.x.has_velocity_limits: true
+    linear.x.max_velocity: 2.0
+    linear.x.min_velocity: -2.0
+    angular.z.has_velocity_limits: true
+    angular.z.max_velocity: 4.0  # Increased from 1.0
+    angular.z.min_velocity: -4.0  # Increased from -1.0

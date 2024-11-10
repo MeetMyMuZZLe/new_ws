@@ -1,0 +1,2249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+  <xacro:arg name="robot_name" default="ball"/>
+  <xacro:arg name="ball_color" default="1 1 1 1"/>
+  <xacro:arg name="body_color" default="White"/>
+  <xacro:arg name="roller_color" default="White"/>
+  <xacro:arg name="wheel_color" default="White"/>
+  <xacro:arg name="racket_color" default="White"/>
+  <link name="$(arg robot_name)_base_footprint"/>
+  <joint name="base_footprint_to_base" type="fixed">
+    <parent link="$(arg robot_name)_base_footprint"/>
+    <child link="$(arg robot_name)_body"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link
+    name="$(arg robot_name)_body">
+    <inertial>
+      <origin
+        xyz="-0.0072825 1.3384E-17 0.48528"
+        rpy="0 0 0" />
+      <mass
+        value="1069.3" />
+      <inertia
+        ixx="126.82"
+        ixy="-0.00071241"
+        ixz="0.02702"
+        iyy="312.73"
+        iyz="-1.104E-15"
+        izz="376.07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/body.STL" />
+      </geometry>
+      <material
+        name="$(arg robot_name)_body">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="$(arg robot_name)_front_right_wheel">
+    <inertial>
+      <origin
+        xyz="1.2212E-15 -0.46425 0"
+        rpy="0 0 0" />
+      <mass
+        value="29.766" />
+      <inertia
+        ixx="0.41081"
+        ixy="-6.4998E-17"
+        ixz="1.7852E-16"
+        iyy="0.50322"
+        iyz="-1.2685E-16"
+        izz="0.41081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="wheel">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.53094 -0.25917 0.29045"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_body" />
+    <child
+      link="$(arg robot_name)_front_right_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller1">
+    <inertial>
+      <origin
+        xyz="-5.1514E-14 5.1958E-14 2.1094E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="0.0058426"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="-0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094261 -0.46724 0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller1" />
+    <axis
+      xyz="-0.70631 0.70711 0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller2">
+    <inertial>
+      <origin
+        xyz="-3.6082E-14 5.3846E-14 3.9801E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="0.0039353"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="-0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller2_joint"
+    type="continuous">
+    <origin
+      xyz="0.16917 -0.46724 0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller2" />
+    <axis
+      xyz="-0.47574 0.70711 0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller3">
+    <inertial>
+      <origin
+        xyz="2.4425E-15 5.3735E-14 5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="-0.00027719"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="-0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller3_joint"
+    type="continuous">
+    <origin
+      xyz="0.22981 -0.46724 -0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller3" />
+    <axis
+      xyz="0.03351 0.70711 0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller4">
+    <inertial>
+      <origin
+        xyz="3.9857E-14 5.3846E-14 3.6193E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="-0.0043273"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="-0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller4_joint"
+    type="continuous">
+    <origin
+      xyz="0.15584 -0.46724 -0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller4" />
+    <axis
+      xyz="0.52313 0.70711 0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller5">
+    <inertial>
+      <origin
+        xyz="5.5511E-14 5.1958E-14 -2.5466E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="-0.0058426"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller5_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0094261 -0.46724 -0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller5" />
+    <axis
+      xyz="0.70631 0.70711 -0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller6">
+    <inertial>
+      <origin
+        xyz="3.6249E-14 5.3846E-14 -3.9829E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="-0.0039353"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller6_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16917 -0.46724 -0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller6" />
+    <axis
+      xyz="0.47574 0.70711 -0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller7">
+    <inertial>
+      <origin
+        xyz="-2.5535E-15 5.3846E-14 -5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="0.00027719"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller7_joint"
+    type="continuous">
+    <origin
+      xyz="-0.22981 -0.46724 0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller7" />
+    <axis
+      xyz="-0.03351 0.70711 -0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller8">
+    <inertial>
+      <origin
+        xyz="-3.9746E-14 5.3735E-14 -3.6193E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="0.0043273"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller8_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15584 -0.46724 0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller8" />
+    <axis
+      xyz="-0.52313 0.70711 -0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="0 -0.46425 -4.996E-16"
+        rpy="0 0 0" />
+      <mass
+        value="29.766" />
+      <inertia
+        ixx="0.41081"
+        ixy="9.2166E-17"
+        ixz="3.1503E-17"
+        iyy="0.50322"
+        iyz="-1.4519E-16"
+        izz="0.41081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="wheel">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.53573 -0.25917 0.29045"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_body" />
+    <child
+      link="$(arg robot_name)_rear_right_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller9">
+    <inertial>
+      <origin
+        xyz="-5.3846E-14 -5.4068E-14 -3.7748E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="-0.0058426"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="-0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller9_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0094261 -0.46724 0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller9" />
+    <axis
+      xyz="0.70631 0.70711 0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller10">
+    <inertial>
+      <origin
+        xyz="-3.9857E-14 -5.3846E-14 3.6193E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="-0.0043273"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller10_joint"
+    type="continuous">
+    <origin
+      xyz="0.15584 -0.46724 0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller10" />
+    <axis
+      xyz="0.52313 0.70711 -0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller11">
+    <inertial>
+      <origin
+        xyz="-2.609E-15 -5.3846E-14 5.379E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="-0.00027719"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller11_joint"
+    type="continuous">
+    <origin
+      xyz="0.22981 -0.46724 0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller11" />
+    <axis
+      xyz="0.03351 0.70711 -0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller12">
+    <inertial>
+      <origin
+        xyz="3.6249E-14 -5.3846E-14 3.9829E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="0.0039353"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller12_joint"
+    type="continuous">
+    <origin
+      xyz="0.16917 -0.46724 -0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller12" />
+    <axis
+      xyz="-0.47574 0.70711 -0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller13">
+    <inertial>
+      <origin
+        xyz="5.3735E-14 -5.3846E-14 2.5535E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="0.0058426"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller13.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller13.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller13_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094261 -0.46724 -0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller13" />
+    <axis
+      xyz="-0.70631 0.70711 -0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller14">
+    <inertial>
+      <origin
+        xyz="3.9857E-14 -5.3846E-14 -3.6221E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="0.0043273"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="-0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller14.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller14.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller14_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15584 -0.46724 -0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller14" />
+    <axis
+      xyz="-0.52313 0.70711 0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller15">
+    <inertial>
+      <origin
+        xyz="2.6645E-15 -5.3846E-14 -5.3846E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="0.00027719"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="-0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller15.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller15.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller15_joint"
+    type="continuous">
+    <origin
+      xyz="-0.22981 -0.46724 -0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller15" />
+    <axis
+      xyz="-0.03351 0.70711 0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller16">
+    <inertial>
+      <origin
+        xyz="-3.6193E-14 -5.3846E-14 -3.9913E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="-0.0039353"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="-0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller16.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller16.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller16_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16917 -0.46724 0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_right_wheel" />
+    <child
+      link="$(arg robot_name)_roller16" />
+    <axis
+      xyz="0.47574 0.70711 0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 0.46425 2.2204E-15"
+        rpy="0 0 0" />
+      <mass
+        value="29.766" />
+      <inertia
+        ixx="0.41081"
+        ixy="-8.3372E-17"
+        ixz="-4.7097E-17"
+        iyy="0.50322"
+        iyz="1.4185E-16"
+        izz="0.41081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="wheel">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.53573 0.25917 0.29045"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_body" />
+    <child
+      link="$(arg robot_name)_rear_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller17">
+    <inertial>
+      <origin
+        xyz="-5.4179E-14 5.2958E-14 -9.992E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="0.0058426"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller17.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller17.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller17_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0094261 0.46724 0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller17" />
+    <axis
+      xyz="0.70631 -0.70711 0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller18">
+    <inertial>
+      <origin
+        xyz="-3.6304E-14 5.3846E-14 -3.9857E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="0.0039353"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller18.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller18.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller18_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16917 0.46724 0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller18" />
+    <axis
+      xyz="0.47574 -0.70711 0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller19">
+    <inertial>
+      <origin
+        xyz="2.6645E-15 5.3846E-14 -5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="-0.00027719"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller19.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller19.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller19_joint"
+    type="continuous">
+    <origin
+      xyz="-0.22981 0.46724 -0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller19" />
+    <axis
+      xyz="-0.03351 -0.70711 0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller20">
+    <inertial>
+      <origin
+        xyz="3.9857E-14 5.3846E-14 -3.6221E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="-0.0043273"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller20.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller20.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller20_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15584 0.46724 -0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller20" />
+    <axis
+      xyz="-0.52313 -0.70711 0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller21">
+    <inertial>
+      <origin
+        xyz="5.3735E-14 5.3846E-14 2.5535E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="-0.0058426"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="-0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller21_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094261 0.46724 -0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller21" />
+    <axis
+      xyz="-0.70631 -0.70711 -0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller22">
+    <inertial>
+      <origin
+        xyz="3.6193E-14 5.3846E-14 3.9801E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="-0.0039353"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="-0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller22_joint"
+    type="continuous">
+    <origin
+      xyz="0.16917 0.46724 -0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller22" />
+    <axis
+      xyz="-0.47574 -0.70711 -0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller23">
+    <inertial>
+      <origin
+        xyz="-2.5535E-15 5.3846E-14 5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="0.00027719"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="-0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller23.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller23.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller23_joint"
+    type="continuous">
+    <origin
+      xyz="0.22981 0.46724 0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller23" />
+    <axis
+      xyz="0.03351 -0.70711 -0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller24">
+    <inertial>
+      <origin
+        xyz="-3.9857E-14 5.3846E-14 3.6193E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="0.0043273"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="-0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller24.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller24.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller24_joint"
+    type="continuous">
+    <origin
+      xyz="0.15584 0.46724 0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_rear_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller24" />
+    <axis
+      xyz="0.52313 -0.70711 -0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_front_left_wheel">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 0.46425 1.6098E-15"
+        rpy="0 0 0" />
+      <mass
+        value="29.766" />
+      <inertia
+        ixx="0.41081"
+        ixy="7.3501E-17"
+        ixz="-5.0328E-17"
+        iyy="0.50322"
+        iyz="1.4321E-16"
+        izz="0.41081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="wheel">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.53094 0.25917 0.29045"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_body" />
+    <child
+      link="$(arg robot_name)_front_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller25">
+    <inertial>
+      <origin
+        xyz="-5.3735E-14 -5.4068E-14 2.9976E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="-0.0058426"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller25.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller25.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller25_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094261 0.46724 0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller25" />
+    <axis
+      xyz="-0.70631 -0.70711 0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller26">
+    <inertial>
+      <origin
+        xyz="-3.9801E-14 -5.3846E-14 -3.6249E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="-0.0043273"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="-0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller26.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller26.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller26_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15584 0.46724 0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller26" />
+    <axis
+      xyz="-0.52313 -0.70711 -0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller27">
+    <inertial>
+      <origin
+        xyz="-2.498E-15 -5.3846E-14 -5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="-0.00027719"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="-0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller27.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller27.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller27_joint"
+    type="continuous">
+    <origin
+      xyz="-0.22981 0.46724 0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller27" />
+    <axis
+      xyz="-0.03351 -0.70711 -0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller28">
+    <inertial>
+      <origin
+        xyz="3.6193E-14 -5.3735E-14 -3.9829E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="0.0039353"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="-0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller28.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller28.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller28_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16917 0.46724 -0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller28" />
+    <axis
+      xyz="0.47574 -0.70711 -0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller29">
+    <inertial>
+      <origin
+        xyz="5.3735E-14 -5.3957E-14 -2.5535E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.010506"
+        ixy="0.0058426"
+        ixz="0.00027688"
+        iyy="0.010493"
+        iyz="-0.00027719"
+        izz="0.016329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller29.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller29.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller29_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0094261 0.46724 -0.22981"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller29" />
+    <axis
+      xyz="0.70631 -0.70711 -0.03351" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller30">
+    <inertial>
+      <origin
+        xyz="3.9968E-14 -5.3846E-14 3.6207E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013141"
+        ixy="0.0043273"
+        ixz="-0.0029114"
+        iyy="0.010493"
+        iyz="0.0039353"
+        izz="0.013694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller30.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller30.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller30_joint"
+    type="continuous">
+    <origin
+      xyz="0.15584 0.46724 -0.16917"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller30" />
+    <axis
+      xyz="0.52313 -0.70711 0.47574" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller31">
+    <inertial>
+      <origin
+        xyz="2.5535E-15 -5.3735E-14 5.3735E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.016329"
+        ixy="0.00027719"
+        ixz="-0.00027688"
+        iyy="0.010493"
+        iyz="0.0058426"
+        izz="0.010506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller31_joint"
+    type="continuous">
+    <origin
+      xyz="0.22981 0.46724 -0.0094261"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller31" />
+    <axis
+      xyz="0.03351 -0.70711 0.70631" />
+  </joint>
+  <link
+    name="$(arg robot_name)_roller32">
+    <inertial>
+      <origin
+        xyz="-3.6304E-14 -5.3846E-14 3.9746E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.571" />
+      <inertia
+        ixx="0.013694"
+        ixy="-0.0039353"
+        ixz="0.0029114"
+        iyy="0.010493"
+        iyz="0.0043273"
+        izz="0.013141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/roller32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_roller32_joint"
+    type="continuous">
+    <origin
+      xyz="0.16917 0.46724 0.15584"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_front_left_wheel" />
+    <child
+      link="$(arg robot_name)_roller32" />
+    <axis
+      xyz="-0.47574 -0.70711 0.52313" />
+  </joint>
+  <link
+    name="$(arg robot_name)_racket">
+    <inertial>
+      <origin
+        xyz="1.2757 -2.6934E-16 -1.7764E-15"
+        rpy="0 0 0" />
+      <mass
+        value="229.15" />
+      <inertia
+        ixx="87.853"
+        ixy="-3.0357E-14"
+        ixz="6.7876E-15"
+        iyy="29.951"
+        iyz="-1.5823E-15"
+        izz="95.639" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/racket.STL" />
+      </geometry>
+      <material
+        name="$(arg robot_name)_racket">
+        <color
+          rgba="1 0.55 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find urdf_tutorial)/meshes/racket.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="$(arg robot_name)_racket_joint"
+    type="prismatic">
+    <origin
+      xyz="0.13313 0 0.49045"
+      rpy="0 0 0" />
+    <parent
+      link="$(arg robot_name)_body" />
+    <child
+      link="$(arg robot_name)_racket" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0.4066"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <gazebo reference="$(arg robot_name)_racket">
+    <material>Gazebo/$(arg racket_color)</material>
+    <selfCollide>true</selfCollide>
+    <mu1 value="1.2" />
+    <mu2 value="1.2" />
+    <kp>1000000000000</kp>
+    <kd>1</kd>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_body">
+    <material>Gazebo/$(arg body_color)</material>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_front_left_wheel">
+    <material>Gazebo/$(arg wheel_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_rear_left_wheel">
+    <material>Gazebo/$(arg wheel_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_front_right_wheel">
+    <material>Gazebo/$(arg wheel_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_rear_right_wheel">
+    <material>Gazebo/$(arg wheel_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_racket">
+    <material>Gazebo/$(arg racket_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller1">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller2">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller3">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller4">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller5">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller6">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller7">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller8">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller9">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller10">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller11">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller12">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller13">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller14">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller15">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller16">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller17">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller18">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller19">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller20">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller21">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller22">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller23">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller24">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller25">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller26">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller27">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller28">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller29">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller30">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller31">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="$(arg robot_name)_roller32">
+    <material>Gazebo/$(arg roller_color)</material>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo>
+    <plugin name="mecanum_robot_drive" filename="libgazebo_mecanum_drive.so">
+      <ros>
+        <namespace>$(arg robot_name)</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>$(arg robot_name)_base_footprint</robotBaseFrame>
+      <LeftRear>$(arg robot_name)_rear_left_wheel_joint</LeftRear>
+      <LeftFront>$(arg robot_name)_front_left_wheel_joint</LeftFront>
+      <RightFront>$(arg robot_name)_front_right_wheel_joint</RightFront>
+      <RightRear>$(arg robot_name)_rear_right_wheel_joint</RightRear>
+      <odometryRate>30</odometryRate>
+      <publishWheelTF>true</publishWheelTF>
+      <publishOdomTF>true</publishOdomTF>
+      <WheelTorque>30</WheelTorque>
+      <WheelSeparationW>1.06067</WheelSeparationW>
+      <WheelSeparationL>1.06667</WheelSeparationL>
+      <wheelAccel>10</wheelAccel>
+      <wheelDiameter>0.59918</wheelDiameter>
+      <publishOdom>true</publishOdom>
+      <isRollerModel>true</isRollerModel>
+    </plugin>
+  </gazebo>
+</robot>

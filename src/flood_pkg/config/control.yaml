@@ -1,0 +1,18 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    drone_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+drone_controller:
+  ros__parameters:
+    joints:
+      - fan1_joint
+      - fan2_joint
+      - fan3_joint
+      - fan4_joint
+    interface_name: velocity
