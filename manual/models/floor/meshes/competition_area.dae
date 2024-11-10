@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
+    </contributor>
+    <created>2020-08-12T12:08:21</created>
+    <modified>2020-08-12T12:08:21</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">39.59775</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light-light" name="Light">
+      <technique_common>
+        <point>
+          <color sid="color">1000 1000 1000</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">1</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1000</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_effects>
+    <effect id="Material_001-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Material_002-effect">
+      <profile_COMMON>
+        <newparam sid="com_a_png-surface">
+          <surface type="2D">
+            <init_from>com_a_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="com_a_png-sampler">
+          <sampler2D>
+            <source>com_a_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="com_a_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Material_003-effect">
+      <profile_COMMON>
+        <newparam sid="com_a_r_png-surface">
+          <surface type="2D">
+            <init_from>com_a_r_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="com_a_r_png-sampler">
+          <sampler2D>
+            <source>com_a_r_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="com_a_r_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="left_R_004-effect">
+      <profile_COMMON>
+        <newparam sid="R_red_png-surface">
+          <surface type="2D">
+            <init_from>R_red_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="R_red_png-sampler">
+          <sampler2D>
+            <source>R_red_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="R_red_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Right_R_005-effect">
+      <profile_COMMON>
+        <newparam sid="R_red2_png-surface">
+          <surface type="2D">
+            <init_from>R_red2_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="R_red2_png-sampler">
+          <sampler2D>
+            <source>R_red2_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="R_red2_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Left_B_004-effect">
+      <profile_COMMON>
+        <newparam sid="Left_Blue_png-surface">
+          <surface type="2D">
+            <init_from>Left_Blue_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Left_Blue_png-sampler">
+          <sampler2D>
+            <source>Left_Blue_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Left_Blue_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Right_Bl_005-effect">
+      <profile_COMMON>
+        <newparam sid="Right_Blue_png-surface">
+          <surface type="2D">
+            <init_from>Right_Blue_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Right_Blue_png-sampler">
+          <sampler2D>
+            <source>Right_Blue_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Right_Blue_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="ken_blue-effect">
+      <profile_COMMON>
+        <newparam sid="ken_blue_png-surface">
+          <surface type="2D">
+            <init_from>ken_blue_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="ken_blue_png-sampler">
+          <sampler2D>
+            <source>ken_blue_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="ken_blue_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="ken_red-effect">
+      <profile_COMMON>
+        <newparam sid="ken_red_png-surface">
+          <surface type="2D">
+            <init_from>ken_red_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="ken_red_png-sampler">
+          <sampler2D>
+            <source>ken_red_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="ken_red_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Material_004-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Left_Blue_png" name="Left_Blue_png">
+      <init_from>Left_Blue.png</init_from>
+    </image>
+    <image id="R_red2_png" name="R_red2_png">
+      <init_from>R_red2.png</init_from>
+    </image>
+    <image id="R_red_png" name="R_red_png">
+      <init_from>R_red.png</init_from>
+    </image>
+    <image id="Right_Blue_png" name="Right_Blue_png">
+      <init_from>Right_Blue.png</init_from>
+    </image>
+    <image id="com_a_png" name="com_a_png">
+      <init_from>com_a.png</init_from>
+    </image>
+    <image id="com_a_r_png" name="com_a_r_png">
+      <init_from>com_a_r.png</init_from>
+    </image>
+    <image id="ken_blue_png" name="ken_blue_png">
+      <init_from>ken_blue.png</init_from>
+    </image>
+    <image id="ken_red_png" name="ken_red_png">
+      <init_from>ken_red.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Material_001-material" name="Material.001">
+      <instance_effect url="#Material_001-effect"/>
+    </material>
+    <material id="Material_002-material" name="Material.002">
+      <instance_effect url="#Material_002-effect"/>
+    </material>
+    <material id="Material_003-material" name="Material.003">
+      <instance_effect url="#Material_003-effect"/>
+    </material>
+    <material id="left_R_004-material" name="left_R.004">
+      <instance_effect url="#left_R_004-effect"/>
+    </material>
+    <material id="Right_R_005-material" name="Right_R.005">
+      <instance_effect url="#Right_R_005-effect"/>
+    </material>
+    <material id="Left_B_004-material" name="Left_B.004">
+      <instance_effect url="#Left_B_004-effect"/>
+    </material>
+    <material id="Right_Bl_005-material" name="Right_Bl.005">
+      <instance_effect url="#Right_Bl_005-effect"/>
+    </material>
+    <material id="ken_blue-material" name="ken_blue">
+      <instance_effect url="#ken_blue-effect"/>
+    </material>
+    <material id="ken_red-material" name="ken_red">
+      <instance_effect url="#ken_red-effect"/>
+    </material>
+    <material id="Material_004-material" name="Material.004">
+      <instance_effect url="#Material_004-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Competition_Area-mesh" name="Competition Area">
+      <mesh>
+        <source id="Competition_Area-mesh-positions">
+          <float_array id="Competition_Area-mesh-positions-array" count="336">3000 -1500 0 4000 -1500 0 3000 -1500 100 4000 -1500 100 3000 -2500 0 3000 -2500 100 -2800 250 0 -2800 1250 0 -2800 250 100 -2800 1250 100 -1800 250 0 -1800 250 100 -1800 1250 0 -1800 1250 100 -4000 -1500 0 -3000 -1500 0 -4000 -1500 100 -3000 -1500 100 -3000 -2500 0 -3000 -2500 100 1800 -250 0 2800 -250 0 1800 -250 100 2800 -250 100 1800 -1250 0 1800 -1250 100 2800 -1250 0 2800 -1250 100 500 -1500 0 500 -2500 0 500 -1500 100 500 -2500 100 -500 -1500 0 -500 -1500 100 -3000 1500 0 -4000 1500 0 -3000 1500 100 -4000 1500 100 -3000 2500 0 -3000 2500 100 -500 1500 0 -500 2500 0 -500 1500 100 -500 2500 100 500 1500 0 500 1500 100 4000 1500 0 3000 1500 0 4000 1500 100 3000 1500 100 3000 2500 0 3000 2500 100 -750 -2500 100 -500 -2500 0 -500 -2500 500 -750 -2500 500 500 2500 0 750 2500 100 500 2500 500 750 2500 500 500 -125 100 1800 -1500 100 2350 100 100 500 125 100 2600 100 100 2600 1100 100 2350 1100 100 750 1500 100 2800 -1500 100 -2600 -100 100 -2600 -1100 100 -2350 -1100 100 -750 -1500 100 -500 -125 100 -2350 -100 100 -500 125 100 -2800 1500 100 -1800 1500 100 -2800 1500 500 -2800 1250 500 -1800 1500 500 -1800 1250 500 2350 1100 500 2350 100 500 2600 1100 500 2600 100 500 -500 125 500 -500 -125 500 500 125 500 500 -125 500 -2600 -100 500 -2600 -1100 500 -2350 -100 500 -2350 -1100 500 1800 -1250 500 1800 -1500 500 2800 -1250 500 2800 -1500 500 500 1500 500 750 1500 500 -500 -1500 500 -750 -1500 500 4000 2500 100 4000 2500 0 -4000 -2500 100 -4000 -2500 0 -500 -2500 100 500 2500 100 -4000 2500 100 -4000 2500 0 4000 -2500 100 4000 -2500 0</float_array>
+          <technique_common>
+            <accessor source="#Competition_Area-mesh-positions-array" count="112" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Competition_Area-mesh-normals">
+          <float_array id="Competition_Area-mesh-normals-array" count="18">0 -1 0 1 0 0 0 1 0 -1 0 0 0 0 1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Competition_Area-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Competition_Area-mesh-map-0">
+          <float_array id="Competition_Area-mesh-map-0-array" count="1812">0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 2.44141e-7 1 0.9999998 1 0.9999998 0 2.44141e-7 0.9999999 0 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0.9978402 0 0.9978402 0.9999998 0 2.44141e-7 0 2.44141e-7 0.9978402 0.9999998 1.21807e-7 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 0 0.9999998 0 0.9999998 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 2.44141e-7 0.9978402 0 2.43613e-7 1 2.43613e-7 1 0.9978402 0 0.9978402 0.9999998 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 1 1 0 1 1 2.44141e-7 1 2.44141e-7 0 1 0 0 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1.2207e-7 0.9978402 0 0 1 0 1 0.9978402 0 0.9978402 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1.83105e-7 0.9978401 0 0 1 0 1 0.9978401 0 0.9978402 0.9999999 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0.9978402 0.9999999 0 1 0.9978402 0 0.9978402 0 0 1 0 0 0 0 1 0 1 1 0 0 1 0 1 1</float_array>
+          <technique_common>
+            <accessor source="#Competition_Area-mesh-map-0-array" count="906" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Competition_Area-mesh-vertices">
+          <input semantic="POSITION" source="#Competition_Area-mesh-positions"/>
+        </vertices>
+        <triangles material="Material_001-material" count="286">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 2 0 3 1 0 4 3 0 5 4 1 6 0 1 7 5 1 8 5 1 9 0 1 10 2 1 11 6 1 12 7 1 13 8 1 14 8 1 15 7 1 16 9 1 17 10 2 18 6 2 19 11 2 20 11 2 21 6 2 22 8 2 23 12 3 24 10 3 25 13 3 26 13 3 27 10 3 28 11 3 29 14 0 30 15 0 31 16 0 32 16 0 33 15 0 34 17 0 35 15 3 36 18 3 37 17 3 38 17 3 39 18 3 40 19 3 41 20 0 42 21 0 43 22 0 44 22 0 45 21 0 46 23 0 47 24 1 48 20 1 49 25 1 50 25 1 51 20 1 52 22 1 53 21 3 54 26 3 55 23 3 56 23 3 57 26 3 58 27 3 59 28 3 60 29 3 61 30 3 62 30 3 63 29 3 64 31 3 65 32 0 66 28 0 67 33 0 68 33 0 69 28 0 70 30 0 71 34 2 72 35 2 73 36 2 74 36 2 75 35 2 76 37 2 77 38 3 78 34 3 79 39 3 80 39 3 81 34 3 82 36 3 83 40 1 84 41 1 85 42 1 86 42 1 87 41 1 88 43 1 89 44 2 90 40 2 91 45 2 92 45 2 93 40 2 94 42 2 95 46 2 96 47 2 97 48 2 98 48 2 99 47 2 100 49 2 101 47 1 102 50 1 103 49 1 104 49 1 105 50 1 106 51 1 107 19 0 108 18 0 109 52 0 110 52 0 111 18 0 112 53 0 113 52 0 114 53 0 115 54 0 116 54 0 117 55 0 118 52 0 119 5 0 120 31 0 121 4 0 122 4 0 123 31 0 124 29 0 125 16 3 126 37 3 127 14 3 128 14 3 129 37 3 130 35 3 131 50 2 132 56 2 133 57 2 134 57 2 135 56 2 136 58 2 137 57 2 138 58 2 139 59 2 140 57 2 141 51 2 142 50 2 143 39 2 144 43 2 145 38 2 146 38 2 147 43 2 148 41 2 149 22 4 150 60 4 151 25 4 152 25 4 153 60 4 154 30 4 155 25 4 156 30 4 157 61 4 158 61 4 159 30 4 160 31 4 161 61 4 162 31 4 163 5 4 164 23 4 165 62 4 166 22 4 167 22 4 168 62 4 169 63 4 170 22 4 171 63 4 172 60 4 173 27 4 174 3 4 175 23 4 176 23 4 177 3 4 178 48 4 179 23 4 180 48 4 181 64 4 182 64 4 183 48 4 184 65 4 185 65 4 186 48 4 187 49 4 188 65 4 189 49 4 190 66 4 191 66 4 192 49 4 193 67 4 194 66 4 195 67 4 196 63 4 197 63 4 198 67 4 199 45 4 200 63 4 201 45 4 202 42 4 203 3 4 204 27 4 205 2 4 206 2 4 207 27 4 208 68 4 209 2 4 210 68 4 211 5 4 212 5 4 213 68 4 214 61 4 215 69 4 216 16 4 217 70 4 218 70 4 219 16 4 220 17 4 221 70 4 222 17 4 223 71 4 224 71 4 225 17 4 226 72 4 227 71 4 228 72 4 229 73 4 230 73 4 231 72 4 232 33 4 233 73 4 234 33 4 235 30 4 236 16 4 237 69 4 238 8 4 239 8 4 240 69 4 241 74 4 242 8 4 243 74 4 244 11 4 245 11 4 246 74 4 247 73 4 248 11 4 249 73 4 250 75 4 251 74 4 252 71 4 253 73 4 254 63 4 255 42 4 256 75 4 257 75 4 258 42 4 259 13 4 260 75 4 261 13 4 262 11 4 263 60 4 264 73 4 265 30 4 266 62 4 267 66 4 268 63 4 269 64 4 270 62 4 271 23 4 272 16 4 273 8 4 274 37 4 275 37 4 276 8 4 277 9 4 278 37 4 279 9 4 280 36 4 281 36 4 282 9 4 283 76 4 284 36 4 285 76 4 286 39 4 287 39 4 288 76 4 289 77 4 290 39 4 291 77 4 292 43 4 293 43 4 294 77 4 295 42 4 296 42 4 297 77 4 298 13 4 299 51 4 300 57 4 301 49 4 302 49 4 303 57 4 304 67 4 305 19 4 306 52 4 307 17 4 308 17 4 309 52 4 310 72 4 311 26 5 312 0 5 313 24 5 314 24 5 315 0 5 316 4 5 317 24 5 318 4 5 319 29 5 320 0 5 321 26 5 322 1 5 323 1 5 324 26 5 325 21 5 326 1 5 327 21 5 328 46 5 329 46 5 330 21 5 331 47 5 332 47 5 333 21 5 334 20 5 335 47 5 336 20 5 337 44 5 338 44 5 339 20 5 340 10 5 341 44 5 342 10 5 343 40 5 344 40 5 345 10 5 346 12 5 347 40 5 348 12 5 349 41 5 350 41 5 351 12 5 352 38 5 353 38 5 354 12 5 355 34 5 356 34 5 357 12 5 358 7 5 359 34 5 360 7 5 361 35 5 362 35 5 363 7 5 364 6 5 365 35 5 366 6 5 367 14 5 368 14 5 369 6 5 370 15 5 371 15 5 372 6 5 373 10 5 374 15 5 375 10 5 376 32 5 377 32 5 378 10 5 379 20 5 380 32 5 381 20 5 382 28 5 383 28 5 384 20 5 385 24 5 386 28 5 387 24 5 388 29 5 389 53 5 390 18 5 391 32 5 392 32 5 393 18 5 394 15 5 395 56 5 396 50 5 397 44 5 398 44 5 399 50 5 400 47 5 401 76 3 402 9 3 403 78 3 404 78 3 405 9 3 406 79 3 407 77 2 408 76 2 409 80 2 410 80 2 411 76 2 412 78 2 413 13 1 414 77 1 415 81 1 416 81 1 417 77 1 418 80 1 419 81 0 420 79 0 421 13 0 422 13 0 423 79 0 424 9 0 425 13 0 426 9 0 427 12 0 428 12 0 429 9 0 430 7 0 431 79 4 432 81 4 433 78 4 434 78 4 435 81 4 436 80 4 437 66 3 438 62 3 439 82 3 440 82 3 441 62 3 442 83 3 443 65 2 444 66 2 445 84 2 446 84 2 447 66 2 448 82 2 449 64 1 450 65 1 451 85 1 452 85 1 453 65 1 454 84 1 455 62 0 456 64 0 457 83 0 458 83 0 459 64 0 460 85 0 461 83 4 462 85 4 463 82 4 464 82 4 465 85 4 466 84 4 467 75 3 468 73 3 469 86 3 470 86 3 471 73 3 472 87 3 473 63 2 474 75 2 475 88 2 476 88 2 477 75 2 478 86 2 479 60 1 480 63 1 481 89 1 482 89 1 483 63 1 484 88 1 485 73 0 486 60 0 487 87 0 488 87 0 489 60 0 490 89 0 491 87 4 492 89 4 493 86 4 494 86 4 495 89 4 496 88 4 497 69 3 498 70 3 499 90 3 500 90 3 501 70 3 502 91 3 503 74 2 504 69 2 505 92 2 506 92 2 507 69 2 508 90 2 509 71 1 510 74 1 511 93 1 512 93 1 513 74 1 514 92 1 515 70 0 516 71 0 517 91 0 518 91 0 519 71 0 520 93 0 521 91 4 522 93 4 523 90 4 524 90 4 525 93 4 526 92 4 527 25 3 528 61 3 529 94 3 530 94 3 531 61 3 532 95 3 533 94 2 534 96 2 535 25 2 536 25 2 537 96 2 538 27 2 539 25 2 540 27 2 541 24 2 542 24 2 543 27 2 544 26 2 545 68 1 546 27 1 547 97 1 548 97 1 549 27 1 550 96 1 551 61 0 552 68 0 553 95 0 554 95 0 555 68 0 556 97 0 557 95 4 558 97 4 559 94 4 560 94 4 561 97 4 562 96 4 563 98 3 564 58 3 565 45 3 566 45 3 567 58 3 568 56 3 569 67 1 570 57 1 571 99 1 572 99 1 573 57 1 574 59 1 575 45 0 576 67 0 577 98 0 578 98 0 579 67 0 580 99 0 581 98 4 582 99 4 583 58 4 584 58 4 585 99 4 586 59 4 587 33 2 588 72 2 589 100 2 590 100 2 591 72 2 592 101 2 593 100 1 594 54 1 595 33 1 596 33 1 597 54 1 598 53 1 599 72 3 600 52 3 601 101 3 602 101 3 603 52 3 604 55 3 605 55 4 606 54 4 607 101 4 608 101 4 609 54 4 610 100 4 611 1 1 612 46 1 613 3 1 614 3 1 615 46 1 616 48 1 617 51 2 618 102 2 619 50 2 620 50 2 621 102 2 622 103 2 623 49 3 624 51 3 625 47 3 626 47 3 627 51 3 628 50 3 629 48 0 630 49 0 631 46 0 632 46 0 633 49 0 634 47 0 635 102 1 636 48 1 637 103 1 638 103 1 639 48 1 640 46 1 641 46 5 648 47 5 649 103 5 650 103 5 651 47 5 652 50 5 653 19 0 654 104 0 655 18 0 656 18 0 657 104 0 658 105 0 659 17 1 660 19 1 661 15 1 662 15 1 663 19 1 664 18 1 665 16 2 666 17 2 667 14 2 668 14 2 669 17 2 670 15 2 671 104 3 672 16 3 673 105 3 674 105 3 675 16 3 676 14 3 677 14 5 684 15 5 685 105 5 686 105 5 687 15 5 688 18 5 689 31 0 690 106 0 691 29 0 692 29 0 693 106 0 694 53 0 695 30 1 696 31 1 697 28 1 698 28 1 699 31 1 700 29 1 701 33 2 702 30 2 703 32 2 704 32 2 705 30 2 706 28 2 707 106 3 708 33 3 709 53 3 710 53 3 711 33 3 712 32 3 713 32 5 720 28 5 721 53 5 722 53 5 723 28 5 724 29 5 725 27 0 726 25 0 727 26 0 728 26 0 729 25 0 730 24 0 731 23 1 732 27 1 733 21 1 734 21 1 735 27 1 736 26 1 737 22 2 738 23 2 739 20 2 740 20 2 741 23 2 742 21 2 743 25 3 744 22 3 745 24 3 746 24 3 747 22 3 748 20 3 749 20 5 756 21 5 757 24 5 758 24 5 759 21 5 760 26 5 761 43 2 762 107 2 763 41 2 764 41 2 765 107 2 766 56 2 767 42 3 768 43 3 769 40 3 770 40 3 771 43 3 772 41 3 773 45 0 774 42 0 775 44 0 776 44 0 777 42 0 778 40 0 779 107 1 780 45 1 781 56 1 782 56 1 783 45 1 784 44 1 785 44 5 792 40 5 793 56 5 794 56 5 795 40 5 796 41 5 797 39 1 798 36 1 799 38 1 800 38 1 801 36 1 802 34 1 803 108 2 804 39 2 805 109 2 806 109 2 807 39 2 808 38 2 809 37 3 810 108 3 811 35 3 812 35 3 813 108 3 814 109 3 815 36 0 816 37 0 817 34 0 818 34 0 819 37 0 820 35 0 821 34 5 828 35 5 829 38 5 830 38 5 831 35 5 832 109 5 833 13 1 834 11 1 835 12 1 836 12 1 837 11 1 838 10 1 839 9 2 840 13 2 841 7 2 842 7 2 843 13 2 844 12 2 845 8 3 846 9 3 847 6 3 848 6 3 849 9 3 850 7 3 851 11 0 852 8 0 853 10 0 854 10 0 855 8 0 856 6 0 857 10 5 864 6 5 865 12 5 866 12 5 867 6 5 868 7 5 869 5 3 870 2 3 871 4 3 872 4 3 873 2 3 874 0 3 875 110 0 876 5 0 877 111 0 878 111 0 879 5 0 880 4 0 881 3 1 882 110 1 883 1 1 884 1 1 885 110 1 886 111 1 887 2 2 888 3 2 889 0 2 890 0 2 891 3 2 892 1 2 893 0 5 900 1 5 901 4 5 902 4 5 903 1 5 904 111 5 905</p>
+        </triangles>
+        <triangles material="Material_002-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>107 4 786 43 4 787 45 4 788 45 4 789 43 4 790 42 4 791</p>
+        </triangles>
+        <triangles material="Material_003-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>106 4 714 31 4 715 33 4 716 33 4 717 31 4 718 30 4 719</p>
+        </triangles>
+        <triangles material="left_R_004-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>102 4 642 51 4 643 48 4 644 48 4 645 51 4 646 49 4 647</p>
+        </triangles>
+        <triangles material="Right_R_005-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>37 4 822 36 4 823 108 4 824 108 4 825 36 4 826 39 4 827</p>
+        </triangles>
+        <triangles material="Left_B_004-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>3 4 894 2 4 895 110 4 896 110 4 897 2 4 898 5 4 899</p>
+        </triangles>
+        <triangles material="Right_Bl_005-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>104 4 678 19 4 679 16 4 680 16 4 681 19 4 682 17 4 683</p>
+        </triangles>
+        <triangles material="ken_blue-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>25 4 750 27 4 751 22 4 752 22 4 753 27 4 754 23 4 755</p>
+        </triangles>
+        <triangles material="ken_red-material" count="2">
+          <input semantic="VERTEX" source="#Competition_Area-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Competition_Area-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Competition_Area-mesh-map-0" offset="2" set="0"/>
+          <p>8 4 858 11 4 859 9 4 860 9 4 861 11 4 862 13 4 863</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Competition_Area" name="Competition Area" type="NODE">
+        <matrix sid="transform">0.001 0 0 0 0 0.001 0 0 0 0 0.001 0 0 0 0 1</matrix>
+        <instance_geometry url="#Competition_Area-mesh" name="Competition Area">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_001-material" target="#Material_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_002-material" target="#Material_002-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_003-material" target="#Material_003-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="left_R_004-material" target="#left_R_004-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Right_R_005-material" target="#Right_R_005-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Left_B_004-material" target="#Left_B_004-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Right_Bl_005-material" target="#Right_Bl_005-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="ken_blue-material" target="#ken_blue-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="ken_red-material" target="#ken_red-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_004-material" target="#Material_004-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.358891 0.7276763 0.3054208 -0.6141704 -6.925791 0 0.8953956 0.4452714 4.958309 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Light" name="Light" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Light-light"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

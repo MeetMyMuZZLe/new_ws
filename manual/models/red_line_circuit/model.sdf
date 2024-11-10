@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="red_line_circuit">
+    <static>true</static>
+    <link name="link">
+      <!-- <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>/home/meet/.gazebo/models/red_line _circuit/meshes/red_line_circuit.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>/home/meet/.gazebo/models/red_line_circuit/meshes/red_line_curve.dae</uri>
+            <scale>50 50 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

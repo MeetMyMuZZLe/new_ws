@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <model name='Ball'>
+    <link name='ball'>
+      <inertial>
+        <pose>0 0 0.75 0 -0 0</pose>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>397.61</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>397.61</iyy>
+          <iyz>0</iyz>
+          <izz>397.61</izz>
+        </inertia>
+      </inertial>
+      <collision name='ball_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/meet/.gazebo/models/Ball/meshes/ball.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ball_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/meet/.gazebo/models/Ball/meshes/ball.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
